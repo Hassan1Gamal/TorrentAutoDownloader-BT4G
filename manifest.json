@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Smart Torrent Downloader",
+  "version": "3.0",
+  "description": "تحميل التورنت بتاب مخفية تتخطى الحماية",
+  "permissions": ["contextMenus", "tabs"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.bt4gprx.com/search*",
+        "*://*.bt4gprx.com/magnet/*",
+        "*://*.downloadtorrentfile.com/hash/*"
+      ],
+      "js": ["content.js"]
+    }
+  ]
+}
